@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   test.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ichinoseyuuki <ichinoseyuuki@student.42    +#+  +:+       +#+        */
+/*   By: yichinos <yichinos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 13:34:18 by ichinoseyuu       #+#    #+#             */
-/*   Updated: 2023/01/24 11:53:32 by ichinoseyuu      ###   ########.fr       */
+/*   Updated: 2023/01/24 15:53:24 by yichinos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,14 @@
 
 #define MAX_LENGTH 100
 
-typedef struct s_stac {
+typedef struct s_node {
+	int *prev;
+	int	num;
+	int *next;
+}t_node;
 
-	int	array[MAX_LENGTH];
-	int	current;
+typedef struct s_stac {
+	t_node	node[MAX_LENGTH];
 }t_stac;
 
 void	init(t_stac *stac)
@@ -28,7 +32,9 @@ void	init(t_stac *stac)
 	i = 0;
 	while (i < MAX_LENGTH)
 	{
-		stac->array[i] = 0;
+		stac->node[i]->prev = NULL;
+		stac->node[i]->num = 0;
+		stac->node[i]->next = NULL
 		i++;
 	}
 	stac->current = 0;
@@ -36,13 +42,8 @@ void	init(t_stac *stac)
 
 int	ft_push(t_stac *stac, int num)
 {
-	if (stac->current < MAX_LENGTH)
-	{
-		stac->array[stac->current] = num;
-		stac->current++;
-	}
-	else
-		printf("error!\n");
+
+
 	return (0);
 }
 
@@ -80,21 +81,23 @@ int	main(int argc, char **argv)
 
 	init(&stac);
 	i = 0;
-	printf("%d\n", argc);
-	while (i < argc)
+	while (i < argc - 1)
 	{
 		ft_push(&stac, atoi(argv[i + 1]));
+		printf("%d")
 		i++;
 	}
+	printf("////////////\n");
 	i = 0;
-	while (i < argc)
+	while (i < argc - 1)
 	{
 		printf("array[%d] = %d\n", i, stac.array[i]);
 		i++;
 	}
+	printf("////////////\n");
 	//sa(&stac);
 	i = 0;
-	while (i < argc)
+	while (i < argc - 1)
 	{
 		printf("%d\n", ft_pop(&stac));
 		i++;
