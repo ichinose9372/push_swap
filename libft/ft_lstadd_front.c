@@ -1,23 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yichinos <yichinos@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: ichinoseyuuki <ichinoseyuuki@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/23 13:34:18 by ichinoseyuu       #+#    #+#             */
-/*   Updated: 2023/01/29 16:11:01 by yichinos         ###   ########.fr       */
+/*   Created: 2022/10/18 16:20:37 by yichinos          #+#    #+#             */
+/*   Updated: 2022/10/19 20:47:21 by ichinoseyuu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <stdio.h>
-// #include <limits.h>
+#include"libft.h"
 
-// int main(void)
-// {
-// 	int i;
-
-// 	i = (int)LONG_MIN;
-// 	printf("%d\n", i);
-// 	return (0);
-// }
+void	ft_lstadd_front(t_list **lst, t_list *new)
+{
+	if (!new)
+		return ;
+	new -> next = *lst;
+	*lst = new;
+}

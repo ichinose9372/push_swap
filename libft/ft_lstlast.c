@@ -1,23 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yichinos <yichinos@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: ichinoseyuuki <ichinoseyuuki@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/23 13:34:18 by ichinoseyuu       #+#    #+#             */
-/*   Updated: 2023/01/29 16:11:01 by yichinos         ###   ########.fr       */
+/*   Created: 2022/10/18 17:15:06 by yichinos          #+#    #+#             */
+/*   Updated: 2022/10/19 21:46:44 by ichinoseyuu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <stdio.h>
-// #include <limits.h>
+#include"libft.h"
 
-// int main(void)
-// {
-// 	int i;
-
-// 	i = (int)LONG_MIN;
-// 	printf("%d\n", i);
-// 	return (0);
-// }
+t_list	*ft_lstlast(t_list *lst)
+{
+	if (!lst)
+		return (NULL);
+	while (lst -> next != NULL)
+	{
+		lst = lst-> next;
+	}
+	return (lst);
+}

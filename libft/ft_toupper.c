@@ -1,23 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yichinos <yichinos@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: yichinos <yichinos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/23 13:34:18 by ichinoseyuu       #+#    #+#             */
-/*   Updated: 2023/01/29 16:11:01 by yichinos         ###   ########.fr       */
+/*   Created: 2022/10/05 17:10:10 by yichinos          #+#    #+#             */
+/*   Updated: 2022/10/23 12:30:10 by yichinos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <stdio.h>
-// #include <limits.h>
+#include"libft.h"
 
-// int main(void)
-// {
-// 	int i;
-
-// 	i = (int)LONG_MIN;
-// 	printf("%d\n", i);
-// 	return (0);
-// }
+int	ft_toupper(int c)
+{
+	if ('a' <= c && c <= 'z')
+		return (c -= 32);
+	return (c);
+}

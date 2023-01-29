@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yichinos <yichinos@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: yichinos <yichinos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/23 13:34:18 by ichinoseyuu       #+#    #+#             */
-/*   Updated: 2023/01/29 16:11:01 by yichinos         ###   ########.fr       */
+/*   Created: 2022/10/09 23:56:49 by ichinoseyuu       #+#    #+#             */
+/*   Updated: 2022/10/23 15:13:32 by yichinos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <stdio.h>
-// #include <limits.h>
+#include"libft.h"
 
-// int main(void)
-// {
-// 	int i;
-
-// 	i = (int)LONG_MIN;
-// 	printf("%d\n", i);
-// 	return (0);
-// }
+void	ft_putendl_fd(char *s, int fd)
+{
+	if (fd < 0 || !s)
+		return ;
+	while (*s != 0)
+	{
+		ft_putchar_fd(*s, fd);
+		s++;
+	}
+	write(fd, "\n", 1);
+}

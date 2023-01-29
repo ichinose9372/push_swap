@@ -1,23 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yichinos <yichinos@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: yichinos <yichinos@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/23 13:34:18 by ichinoseyuu       #+#    #+#             */
-/*   Updated: 2023/01/29 16:11:01 by yichinos         ###   ########.fr       */
+/*   Created: 2022/10/05 12:24:27 by yichinos          #+#    #+#             */
+/*   Updated: 2022/11/21 14:09:06 by yichinos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <stdio.h>
-// #include <limits.h>
+#include "libft.h"
 
-// int main(void)
-// {
-// 	int i;
-
-// 	i = (int)LONG_MIN;
-// 	printf("%d\n", i);
-// 	return (0);
-// }
+int	ft_isalpha(int c)
+{
+	if (('a' <= c && c <= 'z') || ('A' <= c && c <= 'Z'))
+		return (1);
+	return (0);
+}

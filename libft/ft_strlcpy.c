@@ -1,23 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yichinos <yichinos@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/23 13:34:18 by ichinoseyuu       #+#    #+#             */
-/*   Updated: 2023/01/29 16:11:01 by yichinos         ###   ########.fr       */
+/*   Created: 2022/06/28 11:12:36 by yichinos          #+#    #+#             */
+/*   Updated: 2023/01/27 14:02:19 by yichinos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <stdio.h>
-// #include <limits.h>
+#include"libft.h"
 
-// int main(void)
-// {
-// 	int i;
+size_t	ft_strlcpy(char *dest, const char *src, size_t n)
+{
+	size_t	i;
 
-// 	i = (int)LONG_MIN;
-// 	printf("%d\n", i);
-// 	return (0);
-// }
+	i = ft_strlen(src);
+	if (n == 0)
+		return (i);
+	while (n > 1)
+	{
+		if (*src != '\0')
+			*dest++ = *src++;
+		else
+			break ;
+		n--;
+	}
+	*dest = '\0';
+	return (i);
+}

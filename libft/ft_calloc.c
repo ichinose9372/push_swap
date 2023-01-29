@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yichinos <yichinos@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/23 13:34:18 by ichinoseyuu       #+#    #+#             */
-/*   Updated: 2023/01/29 16:11:01 by yichinos         ###   ########.fr       */
+/*   Created: 2022/10/10 13:04:33 by ichinoseyuu       #+#    #+#             */
+/*   Updated: 2023/01/26 14:00:22 by yichinos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <stdio.h>
-// #include <limits.h>
+#include"libft.h"
 
-// int main(void)
-// {
-// 	int i;
+void	*ft_calloc(size_t number, size_t size)
+{
+	void	*mem;
 
-// 	i = (int)LONG_MIN;
-// 	printf("%d\n", i);
-// 	return (0);
-// }
+	if (number == 0 || size == 0)
+	{
+		number = 1;
+		size = 1;
+	}
+	if (number > SIZE_MAX / size)
+		return (NULL);
+	mem = (void *)malloc(number * size);
+	if (!mem)
+		return (NULL);
+	ft_bzero(mem, number * size);
+	return ((void *)mem);
+}
