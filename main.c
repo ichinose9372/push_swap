@@ -6,7 +6,7 @@
 /*   By: yichinos <yichinos@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 16:30:10 by yichinos          #+#    #+#             */
-/*   Updated: 2023/01/29 17:19:59 by yichinos         ###   ########.fr       */
+/*   Updated: 2023/01/29 19:22:01 by yichinos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ void	ft_lstadd_back(t_node **head, t_node	*new)
 int	main(void)
 {
 	t_node	**head;
+	t_node	*tmp;
 	int		i;
 
 	i = 0;
@@ -75,10 +76,27 @@ int	main(void)
 	i = 0;
 	while (i < 10)
 	{
-		printf("%d\n", (*head)->num);
-		*head = (*head)->next;
+		printf("%p\t%p\t%p\n", (*head)->prev, *head, (*head)->next);
+		if ((*head)->next != NULL)
+			head = &(*head)->next;
+		else
+			break ;
+		i++;
+	}
+	tmp = *head;
+	printf ("%p\n", tmp);
+	while ((*head)->prev != NULL)
+		head = &(*head)->prev;
+	printf ("%p\n", *head);
+	(*head)->prev = tmp;
+	tmp->next = (*head);
+	printf("//////////////////////////////////////\n");
+	i = 0;
+	while (i < 10)
+	{
+		printf("%p\t%p\t%p\n", (*head)->prev, *head, (*head)->next);
+		head = &(*head)->next;
 		i++;
 	}
 	return (0);
 }
-
