@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yichinos <yichinos@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/24 16:30:10 by yichinos          #+#    #+#             */
-/*   Updated: 2023/01/30 17:47:12 by yichinos         ###   ########.fr       */
+/*   Created: 2023/01/30 14:16:31 by yichinos          #+#    #+#             */
+/*   Updated: 2023/01/30 14:45:17 by yichinos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
 
-int	main(void)
-{
-	t_node	**list_a;
-	t_node	**list_b;
-	t_node	*tmp;
-	int		i;
+# include <stdio.h>
+# include <stdlib.h>
 
-	list_a = NULL;
-	i = 0;
-	while (i <= 121)
-	{
-		tmp = ft_lstnew(i);
-		ft_lstadd_back(list_a, tmp);
-		i += 11;
-	}
-	
+typedef struct s_node {
+	struct s_node	*prev;
+	int				num;
+	struct s_node	*next;
+}	t_node;
 
-	return (0);
-}
+t_node	*ft_lstnew(int data);
+t_node	*ft_lstlast(t_node *head);
+void	ft_lstadd_back(t_node **head, t_node	*new);
+void	ft_lstadd_front(t_node **head, t_node *new);
+
+
+
+#endif
