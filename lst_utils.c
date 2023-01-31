@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lst_utils.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ichinoseyuuki <ichinoseyuuki@student.42    +#+  +:+       +#+        */
+/*   By: yichinos <yichinos@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 14:07:53 by yichinos          #+#    #+#             */
-/*   Updated: 2023/01/30 21:25:24 by ichinoseyuu      ###   ########.fr       */
+/*   Updated: 2023/01/31 18:09:29 by yichinos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,14 +51,15 @@ void	ft_lstadd_back(t_node **head, t_node	*new)
 	}
 }
 
-void	ft_lstadd_front(t_node **head, t_node *new)
+void	ft_lstadd_front(t_node **list_b, t_node **list_a)
 {
-	if (head && *head)
+	t_node	*temp;
+
+	temp = (*list_a);
+	if (*list_a)
 	{
-		new->next = *head;
-		(*head)->prev = new;
-		*head = new;
+		(*list_a) = (*list_a)->next;
+		temp->next = (*list_b);
+		(*list_b) = temp;
 	}
-	else if (head)
-		*head = new;
 }
