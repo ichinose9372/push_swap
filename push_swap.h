@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yichinos <yichinos@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: ichinoseyuuki <ichinoseyuuki@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 14:16:31 by yichinos          #+#    #+#             */
-/*   Updated: 2023/01/31 18:08:56 by yichinos         ###   ########.fr       */
+/*   Updated: 2023/01/31 21:07:36 by ichinoseyuu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <stdio.h>
 # include <stdlib.h>
-# include "printf/ft_printf.h"
+# include "ft_printf_42tokyo/ft_printf.h"
 
 typedef struct s_node {
 	struct s_node	*prev;

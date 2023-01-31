@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lst_utils.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yichinos <yichinos@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: ichinoseyuuki <ichinoseyuuki@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 14:07:53 by yichinos          #+#    #+#             */
-/*   Updated: 2023/01/31 18:09:29 by yichinos         ###   ########.fr       */
+/*   Updated: 2023/01/31 21:19:21 by ichinoseyuu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,8 @@ void	ft_lstadd_front(t_node **list_b, t_node **list_a)
 	{
 		(*list_a) = (*list_a)->next;
 		temp->next = (*list_b);
+		if ((*list_b) != NULL)
+			(*list_b)->prev = temp;
 		(*list_b) = temp;
 	}
 }
