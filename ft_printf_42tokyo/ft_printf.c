@@ -6,7 +6,7 @@
 /*   By: ichinoseyuuki <ichinoseyuuki@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 14:23:17 by yichinos          #+#    #+#             */
-/*   Updated: 2022/10/31 21:23:28 by ichinoseyuu      ###   ########.fr       */
+/*   Updated: 2023/02/01 23:06:53 by ichinoseyuu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,14 +54,4 @@ int	ft_printf(const char *format, ...)
 	}
 	va_end(ap);
 	return (count);
-}
-
-int main(void)
-{
-	int i;
-	char *s = NULL;
-	//  i = ft_putstr(s);
-	i = ft_printf("%p\n",s);
-	ft_printf("%p",i);
-	return 0;
 }

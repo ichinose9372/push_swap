@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   oparation.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yichinos <yichinos@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: ichinoseyuuki <ichinoseyuuki@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 14:59:31 by yichinos          #+#    #+#             */
-/*   Updated: 2023/01/31 15:45:20 by yichinos         ###   ########.fr       */
+/*   Updated: 2023/02/01 21:59:16 by ichinoseyuu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,3 @@ void	ft_sa(t_node **list_a)
 	ft_swap(list_a);
 	ft_printf("sa\n");
 }
-

@@ -1,24 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   oparation_rra.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ichinoseyuuki <ichinoseyuuki@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/09 20:57:19 by ichinoseyuu       #+#    #+#             */
-/*   Updated: 2022/11/09 20:57:25 by ichinoseyuu      ###   ########.fr       */
+/*   Created: 2023/02/01 23:32:25 by ichinoseyuu       #+#    #+#             */
+/*   Updated: 2023/02/01 23:42:44 by ichinoseyuu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdio.h>
-#include"ft_printf.h"
+#include "push_swap.h"
 
-int main(void)
+void	ft_rev_rorare(t_node **list_a)
 {
-	int i;
-	int *p;
-	p = &i;
-	printf("%%%s%%%c\n","42",'c');
-	ft_printf("%%%s%%%c\n","42",'c');
-	return (0);
+	t_node	*temp;
+	t_node	*cp;
+
+	temp = (*list_a);
+	(*list_a) = (*list_a)->next;
+	cp = (*list_a)->next;
+	cp->next = temp;
+	temp->prev = cp;
+	(*list_a)->next = NULL;
+	(*list_a) = cp;
+}
+
+void	ft_rra(t_node **list_a)
+{
+	ft_rev_rorare(list_a);
+	ft_printf("rra\n");
 }
