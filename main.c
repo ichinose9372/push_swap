@@ -6,7 +6,7 @@
 /*   By: ichinoseyuuki <ichinoseyuuki@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 16:30:10 by yichinos          #+#    #+#             */
-/*   Updated: 2023/02/01 23:46:32 by ichinoseyuu      ###   ########.fr       */
+/*   Updated: 2023/02/03 00:39:43 by ichinoseyuu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,33 +23,21 @@ void	print_list(t_node **list_a)
 		list_a = &(*list_a)->prev;
 }
 
-int	main(void)
+int	main(int argc, char **argv)
 {
 	t_node	**list_a;
 	t_node	**list_b;
-	t_node	*tmp;
-	int		i;
 
-	list_a = malloc(sizeof(t_node));
-	if (list_a == NULL)
-		return (0);
-	*list_a = NULL;
-	i = 11;
-	while (i < 34)
-	{
-		tmp = ft_lstnew(i);
-		ft_lstadd_back(list_a, tmp);
-		i += 11;
-	}
-	list_b = malloc(sizeof(t_node));
-	if (list_b == NULL)
-		return (0);
-	*list_b = NULL;
+	list_a = ft_make_list(list_a);
+	list_b = ft_make_list(list_b);
+	printf("list_a =  %p\n", (*list_a));
+	printf("list_b =  %p\n", (*list_b));
+	push_list(list_a, argc, argv);
 	print_list(list_a);
-	ft_ra(list_a);
-	print_list(list_a);
-	ft_rra(list_a);
-	print_list(list_a);
+	// ft_ra(list_a);
+	// print_list(list_a);
+	// ft_rra(list_a);
+	// print_list(list_a);
 	return (0);
 }
 

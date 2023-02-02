@@ -6,7 +6,7 @@
 /*   By: ichinoseyuuki <ichinoseyuuki@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 14:30:23 by yichinos          #+#    #+#             */
-/*   Updated: 2022/10/31 21:19:23 by ichinoseyuu      ###   ########.fr       */
+/*   Updated: 2023/02/02 10:14:54 by ichinoseyuu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ int	ft_putstr(char *s)
 
 	count = 0;
 	if (!s)
-	{	count += ft_putstr("(NULL)");
+	{
+		count += ft_putstr("(NULL)");
 		return (count);
 	}
 	while (*s)

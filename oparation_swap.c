@@ -1,32 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   oparation_ra.c                                     :+:      :+:    :+:   */
+/*   oparation_swap.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ichinoseyuuki <ichinoseyuuki@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/01 22:21:59 by ichinoseyuu       #+#    #+#             */
-/*   Updated: 2023/02/01 23:31:33 by ichinoseyuu      ###   ########.fr       */
+/*   Created: 2023/01/31 14:59:31 by yichinos          #+#    #+#             */
+/*   Updated: 2023/02/02 10:07:28 by ichinoseyuu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_rotate(t_node **list_a)
+void	ft_swap(t_node **list_a)
 {
-	t_node	*temp;
-	t_node	*cp;
+	t_node	*tmp;
 
-	temp = (*list_a);
-	(*list_a) = (*list_a)->next;
-	cp = (*list_a)->next;
-	cp->next = temp;
-	temp->prev = cp;
-	temp->next = NULL;
+	if ((*list_a) && (*list_a)->next)
+	{
+		tmp = (*list_a)->next;
+		(*list_a)->next = tmp->next;
+		tmp->next = (*list_a);
+		(*list_a) = tmp;
+	}
 }
 
-void	ft_ra(t_node **list_a)
+void	ft_sa(t_node **list_a)
 {
-	ft_rotate(list_a);
-	ft_printf("ra\n");
+	ft_swap(list_a);
+	ft_printf("sa\n");
+}
+
+void	ft_sb(t_node **list_b)
+{
+	ft_swap(list_b);
+	ft_printf("pb\n");
 }

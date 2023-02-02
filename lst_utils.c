@@ -6,7 +6,7 @@
 /*   By: ichinoseyuuki <ichinoseyuuki@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 14:07:53 by yichinos          #+#    #+#             */
-/*   Updated: 2023/02/01 22:17:42 by ichinoseyuu      ###   ########.fr       */
+/*   Updated: 2023/02/03 00:41:49 by ichinoseyuu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	ft_lstadd_back(t_node **head, t_node	*new)
 
 	if (head)
 	{
-		if (*head)
+		if (*head != NULL)
 		{
 			tmp = ft_lstlast(*head);
 			tmp->next = new;

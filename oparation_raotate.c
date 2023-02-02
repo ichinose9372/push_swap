@@ -1,41 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   oparation_pb.c                                     :+:      :+:    :+:   */
+/*   oparation_raotate.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ichinoseyuuki <ichinoseyuuki@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/01 23:43:33 by ichinoseyuu       #+#    #+#             */
-/*   Updated: 2023/02/01 23:48:03 by ichinoseyuu      ###   ########.fr       */
+/*   Created: 2023/02/01 22:21:59 by ichinoseyuu       #+#    #+#             */
+/*   Updated: 2023/02/02 10:11:50 by ichinoseyuu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_push_list_b(t_node **list_b, t_node **list_a)
+void	ft_rotate(t_node **list_a)
 {
 	t_node	*temp;
+	t_node	*cp;
 
 	temp = (*list_a);
-	if (*list_a)
-	{
-		(*list_a) = (*list_a)->next;
-		temp->next = (*list_b);
-		if ((*list_b) != NULL)
-		{
-			(*list_b)->prev = temp;
-			(*list_b) = temp;
-		}
-		else
-		{
-			(*list_b) = temp;
-			(*list_b)->prev = NULL;
-		}
-	}
+	(*list_a) = (*list_a)->next;
+	cp = (*list_a)->next;
+	cp->next = temp;
+	temp->prev = cp;
+	temp->next = NULL;
 }
 
-void	ft_pb(t_node **list_b, t_node **list_a)
+void	ft_ra(t_node **list_a)
 {
-	ft_push_list_b(list_b, list_a);
-	ft_printf("pb\n");
+	ft_rotate(list_a);
+	ft_printf("ra\n");
+}
+
+void	ft_rb(t_node **list_b)
+{
+	ft_rotate(list_b);
+	ft_printf("rb\n");
 }
