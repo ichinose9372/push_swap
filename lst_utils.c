@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lst_utils.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ichinoseyuuki <ichinoseyuuki@student.42    +#+  +:+       +#+        */
+/*   By: yichinos <yichinos@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 14:07:53 by yichinos          #+#    #+#             */
-/*   Updated: 2023/02/03 00:41:49 by ichinoseyuu      ###   ########.fr       */
+/*   Updated: 2023/02/03 16:15:03 by yichinos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
