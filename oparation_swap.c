@@ -6,7 +6,7 @@
 /*   By: ichinoseyuuki <ichinoseyuuki@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 14:59:31 by yichinos          #+#    #+#             */
-/*   Updated: 2023/02/02 10:07:28 by ichinoseyuu      ###   ########.fr       */
+/*   Updated: 2023/02/03 23:07:16 by ichinoseyuu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ void	ft_swap(t_node **list_a)
 		tmp = (*list_a)->next;
 		(*list_a)->next = tmp->next;
 		tmp->next = (*list_a);
+		tmp->prev = NULL;
 		(*list_a) = tmp;
 	}
 }

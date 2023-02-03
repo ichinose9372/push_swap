@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   oparation_revrs_rotate.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yichinos <yichinos@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: ichinoseyuuki <ichinoseyuuki@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 23:32:25 by ichinoseyuu       #+#    #+#             */
-/*   Updated: 2023/02/03 17:03:18 by yichinos         ###   ########.fr       */
+/*   Updated: 2023/02/03 23:09:43 by ichinoseyuu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,13 @@
 void	ft_rev_rotate(t_node **list_a)
 {
 	t_node	*tmp;
-	t_node	*cp;
 
 	tmp = ft_lstlast(*list_a);
-	cp = tmp->prev;
-	tmp->next = (*list_a);
+	(tmp->prev)->next = NULL;
 	(*list_a)->prev = tmp;
-	tmp->prev = NULL;
-	cp->next = NULL;
-	(*list_a) = tmp;
+	tmp->next = (*list_a);
+	(*list_a) = (*list_a)->prev;
+	(*list_a)->prev = NULL;
 }
 
 void	ft_rra(t_node **list_a)
