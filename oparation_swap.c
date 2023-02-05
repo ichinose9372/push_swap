@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   oparation_swap.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ichinoseyuuki <ichinoseyuuki@student.42    +#+  +:+       +#+        */
+/*   By: yichinos <yichinos@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 14:59:31 by yichinos          #+#    #+#             */
-/*   Updated: 2023/02/03 23:07:16 by ichinoseyuu      ###   ########.fr       */
+/*   Updated: 2023/02/04 18:03:05 by yichinos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,13 @@ void	ft_swap(t_node **list_a)
 
 	if ((*list_a) && (*list_a)->next)
 	{
-		tmp = (*list_a)->next;
-		(*list_a)->next = tmp->next;
-		tmp->next = (*list_a);
-		tmp->prev = NULL;
-		(*list_a) = tmp;
+		tmp = *list_a;
+		*list_a = (*list_a)->next;
+		tmp->next = (*list_a)->next;
+		tmp->prev = (*list_a);
+		((tmp->next)->prev) = tmp;
+		(*list_a)->next = tmp;
+		(*list_a)->prev = NULL;
 	}
 }
 

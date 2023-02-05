@@ -6,7 +6,7 @@
 /*   By: yichinos <yichinos@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 14:16:31 by yichinos          #+#    #+#             */
-/*   Updated: 2023/02/03 16:14:37 by yichinos         ###   ########.fr       */
+/*   Updated: 2023/02/05 10:32:10 by yichinos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,14 @@ t_node	**push_list(t_node **list_a, int ac, char **av);
 t_node	**ft_two_sort(t_node **list_a);
 t_node	**ft_three_sort(t_node **list_a);
 t_node	**ft_three_sort_next(t_node	**list_a, t_node *tmp);
-//sort	5
-void	ft_four_sort(t_node **list_a, t_node **list_b);
+//sort	argc = 4 or 5 or 6
+void	ft_six_sort(t_node **list_a, t_node **list_b, int argc);
+void	ft_six_sort_next(t_node **list_a, t_node **list_b);
+//sort argc = 7 over
+void	ft_over_seven_sort(t_node **list_a, t_node **list_b);
 
+//ether
+void	print_list_a(t_node **list_a);
+void	print_list_b(t_node **list_a);
 
 #endif

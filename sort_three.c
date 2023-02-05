@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_three.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ichinoseyuuki <ichinoseyuuki@student.42    +#+  +:+       +#+        */
+/*   By: yichinos <yichinos@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 13:33:54 by yichinos          #+#    #+#             */
-/*   Updated: 2023/02/03 23:00:36 by ichinoseyuu      ###   ########.fr       */
+/*   Updated: 2023/02/05 10:33:35 by yichinos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ t_node	**ft_three_sort(t_node **list_a)
 	{
 		if ((tmp->num < (tmp->next)->num) && (*list_a)->num < (tmp->next)->num)
 			ft_sa(list_a);
-		else if ((tmp->num < (tmp->next)->num) &&
-			(*list_a)->num > (tmp->next)->num)
+		else if ((tmp->num < (tmp->next)->num) && (*list_a)->num
+			> (tmp->next)->num)
 			ft_ra(list_a);
 		else if (tmp->num > (tmp->next)->num)
 		{
