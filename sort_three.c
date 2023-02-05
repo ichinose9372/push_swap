@@ -6,7 +6,7 @@
 /*   By: yichinos <yichinos@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 13:33:54 by yichinos          #+#    #+#             */
-/*   Updated: 2023/02/05 10:33:35 by yichinos         ###   ########.fr       */
+/*   Updated: 2023/02/05 12:37:41 by yichinos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ t_node	**ft_three_sort_next(t_node	**list_a, t_node *tmp)
 	}
 	else if ((*list_a)->num > (tmp->next)->num)
 		ft_rra(list_a);
+	(*list_a)->prev = NULL;
 	return (list_a);
 }
 

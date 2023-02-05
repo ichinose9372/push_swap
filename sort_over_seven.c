@@ -1,41 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   oparation_swap.c                                   :+:      :+:    :+:   */
+/*   sort_over_seven.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yichinos <yichinos@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/31 14:59:31 by yichinos          #+#    #+#             */
-/*   Updated: 2023/02/05 12:25:23 by yichinos         ###   ########.fr       */
+/*   Created: 2023/02/05 10:39:26 by yichinos          #+#    #+#             */
+/*   Updated: 2023/02/05 14:59:09 by yichinos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_swap(t_node **list_a)
+void	ft_over_seven_sort(t_node **list_a, t_node **list_b, int argc)
 {
-	t_node	*tmp;
+	int	list_size;
+	int	max_a_size;
 
-	if ((*list_a) && (*list_a)->next)
+	list_size = ft_lstsize(*list_a);
+	max_a_size = argc - list_size + 2;
+	while (max_a_size < list_size)
 	{
-		tmp = *list_a;
-		*list_a = (*list_a)->next;
-		tmp->next = (*list_a)->next;
-		tmp->prev = (*list_a);
-		((tmp->next)->prev) = tmp;
-		(*list_a)->next = tmp;
-		(*list_a)->prev = NULL;
+		ft_pb(list_b, list_a);
+		list_size--;
 	}
-}
-
-void	ft_sa(t_node **list_a)
-{
-	ft_swap(list_a);
-	ft_printf("sa\n");
-}
-
-void	ft_sb(t_node **list_b)
-{
-	ft_swap(list_b);
-	ft_printf("pb\n");
+	ft_three_sort(list_a);
+	ft_six_sort_next(list_a, list_b);
 }

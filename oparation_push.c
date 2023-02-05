@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   oparation_push.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ichinoseyuuki <ichinoseyuuki@student.42    +#+  +:+       +#+        */
+/*   By: yichinos <yichinos@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 23:43:33 by ichinoseyuu       #+#    #+#             */
-/*   Updated: 2023/02/02 10:08:51 by ichinoseyuu      ###   ########.fr       */
+/*   Updated: 2023/02/05 13:10:11 by yichinos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,13 @@ void	ft_push_list(t_node **list_b, t_node **list_a)
 	t_node	*temp;
 
 	temp = (*list_a);
-	if (*list_a)
+	if ((*list_a))
 	{
 		(*list_a) = (*list_a)->next;
 		temp->next = (*list_b);
 		if ((*list_b) != NULL)
 		{
+			temp->prev = (*list_b)->prev;
 			(*list_b)->prev = temp;
 			(*list_b) = temp;
 		}

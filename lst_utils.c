@@ -6,7 +6,7 @@
 /*   By: yichinos <yichinos@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 14:07:53 by yichinos          #+#    #+#             */
-/*   Updated: 2023/02/03 16:15:03 by yichinos         ###   ########.fr       */
+/*   Updated: 2023/02/05 10:51:48 by yichinos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,4 +71,17 @@ void	ft_lstadd_front(t_node **list_b, t_node **list_a)
 			(*list_b)->prev = NULL;
 		}
 	}
+}
+
+int	ft_lstsize(t_node *list_a)
+{
+	int	count;
+
+	count = 0;
+	while (list_a != NULL)
+	{
+		list_a = list_a->next;
+		count++;
+	}
+	return (count);
 }
