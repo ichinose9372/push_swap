@@ -6,19 +6,30 @@
 /*   By: yichinos <yichinos@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 10:16:37 by ichinoseyuu       #+#    #+#             */
-/*   Updated: 2023/02/05 10:38:37 by yichinos         ###   ########.fr       */
+/*   Updated: 2023/02/07 15:33:36 by yichinos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+t_node	*ft_lstnew(int data)
+{
+	t_node	*ndptr;
+
+	ndptr = malloc(sizeof(t_node));
+	if (!ndptr)
+		return (NULL);
+	ndptr->prev = NULL;
+	ndptr->num = data;
+	ndptr->next = NULL;
+	return (ndptr);
+}
+
 t_node	**ft_make_list(t_node **list_a)
 {
-	t_node	**tmp;
-
-	tmp = malloc(sizeof(t_node *));
-	*tmp = NULL;
-	return (tmp);
+	list_a = malloc(sizeof(t_node *));
+	*list_a = NULL;
+	return (list_a);
 }
 
 t_node	**push_list(t_node **list_a, int ac, char **av)

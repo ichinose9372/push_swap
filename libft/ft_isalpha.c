@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yichinos <yichinos@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yichinos <yichinos@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 12:24:27 by yichinos          #+#    #+#             */
-/*   Updated: 2022/11/21 14:09:06 by yichinos         ###   ########.fr       */
+/*   Updated: 2023/02/07 18:22:46 by yichinos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,3 +18,5 @@ int	ft_isalpha(int c)
 		return (1);
 	return (0);
 }
+
+

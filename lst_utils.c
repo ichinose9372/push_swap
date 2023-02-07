@@ -3,27 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   lst_utils.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yichinos <yichinos@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: ichinoseyuuki <ichinoseyuuki@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 14:07:53 by yichinos          #+#    #+#             */
-/*   Updated: 2023/02/05 10:51:48 by yichinos         ###   ########.fr       */
+/*   Updated: 2023/02/06 09:53:32 by ichinoseyuu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-t_node	*ft_lstnew(int data)
-{
-	t_node	*ndptr;
-
-	ndptr = malloc(sizeof(t_node));
-	if (!ndptr)
-		return (NULL);
-	ndptr->prev = NULL;
-	ndptr->num = data;
-	ndptr->next = NULL;
-	return (ndptr);
-}
 
 t_node	*ft_lstlast(t_node *head)
 {

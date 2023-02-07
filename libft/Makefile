@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: yichinos <yichinos@student.42.fr>          +#+  +:+       +#+         #
+#    By: yichinos <yichinos@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/06 13:35:07 by ichinoseyuu       #+#    #+#              #
-#    Updated: 2022/10/25 12:54:32 by yichinos         ###   ########.fr        #
+#    Updated: 2023/02/07 16:09:07 by yichinos         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
