@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   oparation_raotate.c                                :+:      :+:    :+:   */
+/*   oparation_rotate.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yichinos <yichinos@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 22:21:59 by ichinoseyuu       #+#    #+#             */
-/*   Updated: 2023/02/03 16:58:24 by yichinos         ###   ########.fr       */
+/*   Updated: 2023/02/08 13:16:02 by yichinos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void	ft_rotate(t_node **list_a)
 	tmp->next = (*list_a);
 	(*list_a)->prev = tmp;
 	(*list_a)->next = NULL;
+	cp->prev = NULL;
 	*list_a = cp;
 }
 

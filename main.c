@@ -6,7 +6,7 @@
 /*   By: yichinos <yichinos@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 16:30:10 by yichinos          #+#    #+#             */
-/*   Updated: 2023/02/07 20:15:09 by yichinos         ###   ########.fr       */
+/*   Updated: 2023/02/08 14:57:52 by yichinos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,30 +47,15 @@ int	main(int argc, char **argv)
 	if (argc > 2)
 	{
 		push_list(list_a, argc, argv);
+		print_list_a(list_a);
 		if (argc == 3)
 			list_a = ft_two_sort(list_a);
 		else if (argc == 4)
 			ft_three_sort(list_a);
-		else if (5 <= argc && argc <= 7)
-			ft_six_sort(list_a, list_b, argc);
-		// else if (argc >= 8)
-			//ft_over_seven_sort(list_a, list_b, argc);
-
+		else if (5 <= argc && argc <= 6)
+			ft_four_five_sort(list_a, list_b, argc);
+		// else if (argc >= 7)
+		// 	ft_over_seven_sort(list_a, list_b, argc);
 	}
 	return (0);
 }
-
-
-// if ((*list_a)->num > (*list_b)->num)
-// 		{
-// 			ft_pa(list_a, list_b);
-// 			if (head->num > (*list_a)->num)
-// 				head = (*list_a);
-// 			list_a = &head;
-// 		}
-// 		list_a = &(*list_a)->next;
-// 		if ((*list_a) == NULL)
-// 		{
-// 			ft_pa(list_a, list_b);
-// 			ft_ra(list_a);
-// 		}

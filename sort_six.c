@@ -6,63 +6,84 @@
 /*   By: yichinos <yichinos@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 14:53:47 by yichinos          #+#    #+#             */
-/*   Updated: 2023/02/07 20:19:59 by yichinos         ###   ########.fr       */
+/*   Updated: 2023/02/08 13:56:46 by yichinos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_node	**ft_six_sort_next(t_node **list_a, t_node **list_b)
+int	min_serch(t_node **list_a)
 {
-	int	count;
+	int	min;
 
-	count = 0;
-	while (list_b)
+	min = (*list_a)->num;
+	while (*list_a)
 	{
-		if ((*list_a)->num > (*list_b)->num)
-		{
-			ft_pa(list_a, list_b);
-			while (count)
-			{
-				ft_rra(list_a);
-				count--;
-			}
-		}
-		else
-		{
-			ft_ra(list_a);
-			count++;
-		}
+		if (min > (*list_a)->num)
+			min = (*list_a)->num;
+		list_a = &(*list_a)->next;
 	}
-	return (list_a);
+	return (min);
 }
 
-t_node	**ft_six_sort(t_node **list_a, t_node **list_b, int argc)
-{
-	int	num;
-	int	i;
 
-	num = argc - 4;
-	i = 0;
-	while (i < num)
+int	max_serch(t_node **list_a)
+{
+	int	max;
+
+	max = (*list_a)->num;
+	while (*list_a)
 	{
-		ft_pb(list_b, list_a);
-		i++;
+		if (max < (*list_a)->num)
+			max = (*list_a)->num;
+		list_a = &(*list_a)->next;
 	}
-	if (num == 3)
+	return (max);
+}
+
+void	ft_four_sort(t_node **list_a, t_node **list_b)
+{
+	ft_two_sort(list_a);
+	ft_two_sort(list_b);
+	ft_pa(list_a, list_b);
+	ft_pa(list_a, list_b);
+	ft_ra(list_a);
+}
+
+void	ft_five_sort(t_node **list_a, t_node **list_b)
+{
+	ft_two_sort(list_b);
+	ft_three_sort(list_a);
+	ft_pa(list_a, list_b);
+	ft_pa(list_a, list_b);
+	ft_ra(list_a);
+}
+
+
+t_node	**ft_four_five_sort(t_node **list_a, t_node **list_b, int argc)
+{
+	int	min;
+	int	max;
+	int	count;
+
+	min = min_serch(list_a);
+	max = max_serch(list_a);
+	count = 0;
+	while (1)
 	{
-		ft_three_sort(list_a);
-		ft_three_sort(list_b);
+		if ((*list_a)->num == min || (*list_a)->num == max)
+		{
+			ft_pb(list_b, list_a);
+			count++;
+			if (count == 2)
+				break ;
+		}
+		else
+			ft_ra(list_a);
 	}
-	if (num == 2)
-	{
-		ft_three_sort(list_a);
-		ft_two_sort(list_b);
-	}
-	if (num == 1)
-		ft_three_sort(list_a);
-	print_list_a(list_a);
-	print_list_b(list_b);
-	//ft_six_sort_next(list_a, list_b);
+	if (argc == 5)
+		ft_four_sort(list_a, list_b);
+	if (argc == 6)
+		ft_five_sort(list_a, list_b);
 	return (list_a);
 }
