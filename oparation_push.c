@@ -6,7 +6,7 @@
 /*   By: yichinos <yichinos@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 23:43:33 by ichinoseyuu       #+#    #+#             */
-/*   Updated: 2023/02/05 13:10:11 by yichinos         ###   ########.fr       */
+/*   Updated: 2023/02/11 11:11:13 by yichinos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ void	ft_push_list(t_node **list_b, t_node **list_a)
 		temp->next = (*list_b);
 		if ((*list_b) != NULL)
 		{
-			temp->prev = (*list_b)->prev;
 			(*list_b)->prev = temp;
 			(*list_b) = temp;
 		}

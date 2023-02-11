@@ -6,7 +6,7 @@
 /*   By: yichinos <yichinos@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 14:16:31 by yichinos          #+#    #+#             */
-/*   Updated: 2023/02/08 13:49:44 by yichinos         ###   ########.fr       */
+/*   Updated: 2023/02/11 12:45:10 by yichinos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,23 @@
 
 # include <stdio.h>
 # include <stdlib.h>
+# include <limits.h>
 # include "ft_printf_42tokyo/ft_printf.h"
 # include "libft/libft.h"
 
 typedef struct s_node {
 	struct s_node	*prev;
+	int				index;
 	int				num;
 	struct s_node	*next;
 }	t_node;
 
+
+// cordinate compression
+void	ft_sort_int_tab(int *tab, int size);
+int		*ft_make_arry(int argc, char **argv);
+t_node	**ft_compression(int *arry, int size, t_node **list_a);
+t_node	**ft_cord_comp(int argc, char **argv, t_node **list_a);
 // operate list
 t_node	*ft_lstlast(t_node *head);
 void	ft_lstadd_back(t_node **head, t_node	*new);
@@ -53,14 +61,17 @@ t_node	**ft_three_sort(t_node **list_a);
 t_node	**ft_three_sort_next(t_node	**list_a, t_node *tmp);
 //sort	argc = 4 or 5
 t_node	**ft_four_five_sort(t_node **list_a, t_node **list_b, int argc);
-void	ft_four_sort(t_node **list_a, t_node **list_b);
-void	ft_five_sort(t_node **list_a, t_node **list_b);
+void	ft_five_sort(t_node **list_a, t_node **list_b, int min, int max);
+void	ft_four_sort(t_node **list_a, t_node **list_b, int min);
 int		max_serch(t_node **list_a);
 int		min_serch(t_node **list_a);
 //sort argc = 7 over
-t_node	**ft_over_seven_sort(t_node **list_a, t_node **list_b, int argc);
-//other
+t_node	**ft_over_six_sort(t_node **list_a, t_node **list_b, int argc);
+int		ft_hels_count(t_node **list_a);
+//ether
 void	print_list_a(t_node **list_a);
 void	print_list_b(t_node **list_b);
+void	ft_error(void);
+
 
 #endif

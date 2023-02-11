@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   list_init.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yichinos <yichinos@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: ichinoseyuuki <ichinoseyuuki@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 10:16:37 by ichinoseyuu       #+#    #+#             */
-/*   Updated: 2023/02/07 15:33:36 by yichinos         ###   ########.fr       */
+/*   Updated: 2023/02/09 14:48:50 by ichinoseyuu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,20 +32,21 @@ t_node	**ft_make_list(t_node **list_a)
 	return (list_a);
 }
 
-t_node	**push_list(t_node **list_a, int ac, char **av)
+t_node	**push_list(t_node **list_a, int argc, char **argv)
 {
 	t_node	*tmp;
+	long	num;
 	int		i;
 
 	i = 1;
-	if (ac == 0 || ac == 1)
+	while (i < argc)
 	{
-		printf("error !\n");
-		exit(1);
-	}
-	while (i < ac)
-	{
-		tmp = ft_lstnew(ft_atoi(av[i]));
+		if (!(ft_isdigit(*argv[i])))
+			ft_error();
+		num = ft_atoi(argv[i]);
+		if (num > LONG_MAX || num < LONG_MIN)
+			ft_error();
+		tmp = ft_lstnew(num);
 		ft_lstadd_back(list_a, tmp);
 		i++;
 	}

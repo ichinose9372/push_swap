@@ -11,10 +11,12 @@ SRCS	=	main.c\
 			oparation_rotate.c\
 			oparation_revers_rotate.c\
 			oparation_swap.c\
-			sort_over_seven.c\
-			sort_six.c\
+			sort_over_six.c\
+			sort_four_five.c\
 			sort_three.c\
-			sort_two.c
+			sort_two.c\
+			cord_comp.c\
+			error.c
 
 HEAD	=	push_swap.h
 
