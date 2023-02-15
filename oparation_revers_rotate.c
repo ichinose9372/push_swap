@@ -1,20 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   oparation_revrs_rotate.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yichinos <yichinos@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/05 12:24:27 by yichinos          #+#    #+#             */
-/*   Updated: 2023/02/15 17:11:11 by yichinos         ###   ########.fr       */
+/*   Created: 2023/02/01 23:32:25 by ichinoseyuu       #+#    #+#             */
+/*   Updated: 2023/02/04 18:10:47 by yichinos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-int	ft_isalpha(int c)
+void	ft_rev_rotate(t_node **list_a)
 {
-	if (('a' <= c && c <= 'z') || ('A' <= c && c <= 'Z'))
-		return (1);
-	return (0);
+	t_node	*last;
+	t_node	*tmp;
+
+	last = ft_lstlast(*list_a);
+	tmp = last->prev;
+	tmp->next = NULL;
+	last->next = (*list_a);
+	(*list_a)->prev = last;
+	last->prev = NULL;
+	*list_a = last;
+}
+
+void	ft_rra(t_node **list_a)
+{
+	ft_rev_rotate(list_a);
+	ft_printf("rra\n");
+}
+
+void	ft_rrb(t_node **list_b)
+{
+	ft_rev_rotate(list_b);
+	ft_printf("rrb\n");
 }

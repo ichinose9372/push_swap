@@ -6,7 +6,7 @@
 /*   By: yichinos <yichinos@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 14:16:31 by yichinos          #+#    #+#             */
-/*   Updated: 2023/02/12 18:53:07 by yichinos         ###   ########.fr       */
+/*   Updated: 2023/02/15 15:03:23 by yichinos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ t_node	**push_list(t_node **list_a, int ac, char **av);
 t_node	**ft_two_sort(t_node **list_a);
 t_node	**ft_three_sort(t_node **list_a);
 t_node	**ft_three_sort_next(t_node	**list_a, t_node *tmp);
+t_node	**ft_two_three_sort(t_node **list_a, int argc);
 //sort	argc = 4 or 5
 t_node	**ft_four_five_sort(t_node **list_a, t_node **list_b, int argc);
 void	ft_five_sort(t_node **list_a, t_node **list_b, int min, int max);
@@ -67,12 +68,13 @@ int		min_serch(t_node **list_a);
 //sort argc = 7 over
 t_node	**ft_over_six_sort(t_node **list_a, t_node **list_b);
 int		helf_push_a(t_node **list_a, t_node **list_b);
-int		helf_push_b(t_node **list_b, t_node **list_a, int block);
+int		helf_push_b(t_node **list_b, t_node **list_a, int min, int max);
+void	sort_list_b(t_node **list_a, t_node **list_b);
 
 //ether
 void	print_list_a(t_node **list_a);
 void	print_list_b(t_node **list_b);
+void	check_argv(int argc, char **argv);
 void	ft_error(void);
-
 
 #endif

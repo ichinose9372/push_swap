@@ -6,26 +6,27 @@
 /*   By: yichinos <yichinos@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 10:39:26 by yichinos          #+#    #+#             */
-/*   Updated: 2023/02/12 19:08:13 by yichinos         ###   ########.fr       */
+/*   Updated: 2023/02/15 14:58:55 by yichinos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	helf_push_b(t_node **list_b, t_node **list_a, int block)
+int	helf_push_b(t_node **list_b, t_node **list_a, int min, int max)
 {
 	int	count;
-	int	helf;
+	int	h_size;
 
-	helf = ft_lstsize(*list_a) / 2;
+	h_size = max - min;
 	count = 0;
-	while (block)
+	while (1)
 	{
-		if (helf > (*list_a)->index)
+		if ((*list_a)->index >= min && (*list_a)->index < max)
 		{
 			ft_pb(list_b, list_a);
-			count++;
-			block--;
+			h_size--;
+			if (h_size == 0)
+				break ;
 		}
 		else
 			ft_ra(list_a);
@@ -33,68 +34,78 @@ int	helf_push_b(t_node **list_b, t_node **list_a, int block)
 	return (count);
 }
 
-// int	helf_push_a(t_node **list_a, t_node **list_b)
-// {
-// 	int	lst_size;
-// 	int	count;
+int	helf_push_a(t_node **list_a, t_node **list_b)
+{
+	int	max;
+	int	count;
+	int	h_size;
 
-// 	count = 0;
-// 	lst_size = ft_lstsize(*list_b) / 2;
-// 	while (lst_size)
-// 	{
-// 		if (lst_size <= (*list_b)->index)
-// 		{
-// 			ft_pa(list_a, list_b);
-// 			count++;
-// 			lst_size--;
-// 		}
-// 		else
-// 			ft_rb(list_b);
-// 	}
-// 	if (lst_size > 3)
-// 		helf_push_a(list_a, list_b);
-// 	return (count);
-// }
+	count = 0;
+	h_size = ft_lstsize(*list_b) / 2;
+	max = max_serch(list_b);
+	while (1)
+	{
+		if ((*list_b)->index == max)
+		{
+			ft_pa(list_a, list_b);
+			count++;
+			max--;
+			if (count == h_size)
+				break ;
+		}
+		else
+			ft_rb(list_b);
+	}
+	return (count);
+}
+
+void	push_rotate(t_node **list_a, t_node **list_b, int count)
+{
+	int	i;
+
+	i = 0;
+	while (i < count)
+	{
+		ft_pa(list_a, list_b);
+		ft_ra(list_a);
+		i++;
+	}
+}
+
+void	sort_list_b(t_node **list_a, t_node **list_b)
+{
+	int	size;
+	int	count;
+
+	size = ft_lstsize(*list_b);
+	if (size >= 4)
+	{
+		count = helf_push_a(list_a, list_b);
+		sort_list_b(list_a, list_b);
+		while (count)
+		{
+			ft_pb(list_b, list_a);
+			count--;
+		}
+		sort_list_b(list_a, list_b);
+	}
+	else if (size == 3 || size == 2)
+	{
+		ft_two_three_sort(list_b, size + 1);
+		push_rotate(list_a, list_b, size);
+	}
+}
 
 t_node	**ft_over_six_sort(t_node **list_a, t_node **list_b)
 {
-	int	i;
-	// int	j;
+	int	count;
+	int	h_size;
 
-	i = helf_push_b(list_b, list_a, ft_lstsize(*list_a)/2);
-	// j = helf_push_a(list_a, list_b);
-	// if (ft_lstsize(*list_b) == 2)
-	// {
-	// 	ft_two_sort(list_b);
-	// 	ft_pa(list_a, list_b);
-	// 	ft_ra(list_a);
-	// 	ft_pa(list_a, list_b);
-	// 	ft_ra(list_a);
-	// }
-	// else if (ft_lstsize(*list_b) == 3)
-	// {
-	// 	ft_two_sort(list_b);
-	// 	ft_pa(list_a, list_b);
-	// 	ft_ra(list_a);
-	// 	ft_pa(list_a, list_b);
-	// 	ft_ra(list_a);
-	// 	ft_pa(list_a, list_b);
-	// 	ft_ra(list_a);
-	// }
-	// while (j)
-	// {
-	// 	ft_pb(list_b, list_a);
-	// 	j--;
-	// }
-	// if (ft_lstsize(*list_b) == 2)
-	// {
-	// 	ft_two_sort(list_b);
-	// 	ft_pa(list_a, list_b);
-	// 	ft_ra(list_a);
-	// 	ft_pa(list_a, list_b);
-	// 	ft_ra(list_a);
-	// }
-	print_list_a(list_a);
-	print_list_b(list_b);
+	h_size = ft_lstsize(*list_a) / 2;
+	count = ft_lstsize(*list_a);
+	helf_push_b(list_b, list_a, 0, h_size);
+	sort_list_b(list_a, list_b);
+	helf_push_b(list_b, list_a, h_size, count);
+	sort_list_b(list_a, list_b);
 	return (list_a);
 }

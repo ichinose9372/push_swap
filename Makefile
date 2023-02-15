@@ -13,10 +13,9 @@ SRCS	=	main.c\
 			oparation_swap.c\
 			sort_over_six.c\
 			sort_four_five.c\
-			sort_three.c\
-			sort_two.c\
+			sort_two_three.c\
 			cord_comp.c\
-			error.c
+			error.c\
 
 HEAD	=	push_swap.h
 
