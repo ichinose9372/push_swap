@@ -6,11 +6,11 @@
 /*   By: yichinos <yichinos@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 10:39:26 by yichinos          #+#    #+#             */
-/*   Updated: 2023/02/15 14:58:55 by yichinos         ###   ########.fr       */
+/*   Updated: 2023/02/16 16:19:22 by yichinos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../include/push_swap.h"
 
 int	helf_push_b(t_node **list_b, t_node **list_a, int min, int max)
 {

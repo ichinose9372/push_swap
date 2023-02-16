@@ -6,11 +6,11 @@
 /*   By: yichinos <yichinos@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 13:17:20 by yichinos          #+#    #+#             */
-/*   Updated: 2023/02/15 13:53:11 by yichinos         ###   ########.fr       */
+/*   Updated: 2023/02/16 16:19:25 by yichinos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../include/push_swap.h"
 
 t_node	**ft_two_sort(t_node **list_a)
 {

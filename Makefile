@@ -5,17 +5,18 @@ CC		=	cc
 CFLAGS	=	-Wall -Wextra -Werror
 
 SRCS	=	main.c\
-			list_init.c\
-			lst_utils.c\
-			oparation_push.c\
-			oparation_rotate.c\
-			oparation_revers_rotate.c\
-			oparation_swap.c\
-			sort_over_six.c\
-			sort_four_five.c\
-			sort_two_three.c\
-			cord_comp.c\
-			error.c\
+			srcs/makelist/list_init.c\
+			srcs/makelist/lst_utils.c\
+			srcs/makelist/cord_comp.c\
+			srcs/check/check_arg.c\
+			srcs/oparations/oparation_push.c\
+			srcs/oparations/oparation_rotate.c\
+			srcs/oparations/oparation_revers_rotate.c\
+			srcs/oparations/oparation_swap.c\
+			srcs/sort/sort_over_six.c\
+			srcs/sort/sort_four_five.c\
+			srcs/sort/sort_two_three.c\
+			srcs/error/error.c\
 
 HEAD	=	push_swap.h
 

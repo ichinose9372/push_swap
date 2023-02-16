@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   cord_comp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ichinoseyuuki <ichinoseyuuki@student.42    +#+  +:+       +#+        */
+/*   By: yichinos <yichinos@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 12:12:06 by ichinoseyuu       #+#    #+#             */
-/*   Updated: 2023/02/09 13:56:45 by ichinoseyuu      ###   ########.fr       */
+/*   Updated: 2023/02/16 18:07:30 by yichinos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../include/push_swap.h"
 
 void	ft_sort_int_tab(int *tab, int size)
 {
@@ -47,10 +47,11 @@ int	*ft_make_arry(int argc, char **argv)
 		return (NULL);
 	top = arry;
 	i = 0;
-	while (i < argc - 1)
+	while (*argv)
 	{
-		arry[i] = atoi(argv[i + 1]);
+		arry[i] = ft_atoi(*argv);
 		i++;
+		argv++;
 	}
 	return (top);
 }

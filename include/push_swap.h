@@ -6,7 +6,7 @@
 /*   By: yichinos <yichinos@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 14:16:31 by yichinos          #+#    #+#             */
-/*   Updated: 2023/02/15 15:03:23 by yichinos         ###   ########.fr       */
+/*   Updated: 2023/02/16 17:38:22 by yichinos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <limits.h>
-# include "ft_printf_42tokyo/ft_printf.h"
-# include "libft/libft.h"
+# include "../ft_printf_42tokyo/ft_printf.h"
+# include "../libft/libft.h"
 
 typedef struct s_node {
 	struct s_node	*prev;
@@ -53,7 +53,7 @@ void	ft_sb(t_node **list_b);
 // main and init list
 t_node	*ft_lstnew(int data);
 t_node	**ft_make_list(t_node **list_a);
-t_node	**push_list(t_node **list_a, int ac, char **av);
+t_node	**push_list(t_node **list_a, char **argv);
 // sort list
 t_node	**ft_two_sort(t_node **list_a);
 t_node	**ft_three_sort(t_node **list_a);
@@ -61,20 +61,22 @@ t_node	**ft_three_sort_next(t_node	**list_a, t_node *tmp);
 t_node	**ft_two_three_sort(t_node **list_a, int argc);
 //sort	argc = 4 or 5
 t_node	**ft_four_five_sort(t_node **list_a, t_node **list_b, int argc);
-void	ft_five_sort(t_node **list_a, t_node **list_b, int min, int max);
-void	ft_four_sort(t_node **list_a, t_node **list_b, int min);
+void	ft_five_sort(t_node **list_a, t_node **list_b);
+void	ft_four_sort(t_node **list_a, t_node **list_b);
 int		max_serch(t_node **list_a);
 int		min_serch(t_node **list_a);
+int		min_push(t_node **list_a);
 //sort argc = 7 over
 t_node	**ft_over_six_sort(t_node **list_a, t_node **list_b);
 int		helf_push_a(t_node **list_a, t_node **list_b);
 int		helf_push_b(t_node **list_b, t_node **list_a, int min, int max);
 void	sort_list_b(t_node **list_a, t_node **list_b);
 
-//ether
+//error
+void	ft_error(void);
+int		check_arg(int argc, char **argv, t_node **list_a);
+//other
 void	print_list_a(t_node **list_a);
 void	print_list_b(t_node **list_b);
-void	check_argv(int argc, char **argv);
-void	ft_error(void);
 
 #endif

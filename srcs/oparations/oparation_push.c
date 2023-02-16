@@ -6,11 +6,11 @@
 /*   By: yichinos <yichinos@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 23:43:33 by ichinoseyuu       #+#    #+#             */
-/*   Updated: 2023/02/11 18:58:52 by yichinos         ###   ########.fr       */
+/*   Updated: 2023/02/16 16:19:06 by yichinos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../include/push_swap.h"
 
 void	ft_push_list(t_node **list_b, t_node **list_a)
 {
@@ -30,6 +30,7 @@ void	ft_push_list(t_node **list_b, t_node **list_a)
 		{
 			(*list_b) = temp;
 			(*list_b)->prev = NULL;
+			(*list_a)->prev = NULL;
 		}
 	}
 	(*list_b)->prev = NULL;
