@@ -6,7 +6,7 @@
 /*   By: ichinoseyuuki <ichinoseyuuki@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 16:30:10 by yichinos          #+#    #+#             */
-/*   Updated: 2023/02/18 11:46:22 by ichinoseyuu      ###   ########.fr       */
+/*   Updated: 2023/02/18 14:34:30 by ichinoseyuu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,15 +48,6 @@ int	main(int argc, char **argv)
 	list_a = ft_make_list(list_a);
 	list_b = ft_make_list(list_b);
 	argc = check_arg(argc, argv, list_a);
-	if (argc <= 4)
-		ft_two_three_sort(list_a, argc);
-	else if (5 <= argc && argc <= 6)
-		ft_four_five_sort(list_a, list_b, argc);
-	else if (argc > 6)
-		ft_over_six_sort(list_a, list_b);
-	else
-		ft_error();
-	//print_list_a(list_a);
-	//print_list_b(list_b);
+	ft_sort(list_a, list_b, argc);
 	return (0);
 }

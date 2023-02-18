@@ -6,7 +6,7 @@
 /*   By: ichinoseyuuki <ichinoseyuuki@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 14:16:31 by yichinos          #+#    #+#             */
-/*   Updated: 2023/02/17 22:50:46 by ichinoseyuu      ###   ########.fr       */
+/*   Updated: 2023/02/18 14:34:01 by ichinoseyuu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ t_node	*ft_lstnew(int data);
 t_node	**ft_make_list(t_node **list_a);
 t_node	**push_list(t_node **list_a, char **argv);
 // sort list
+t_node	**ft_sort(t_node **list_a, t_node **list_b, int	num);
 t_node	**ft_two_sort(t_node **list_a);
 t_node	**ft_three_sort(t_node **list_a);
 t_node	**ft_three_sort_next(t_node	**list_a, t_node *tmp);

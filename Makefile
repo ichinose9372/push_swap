@@ -17,6 +17,7 @@ SRCS	=	main.c\
 			srcs/sort/sort_four_five.c\
 			srcs/sort/sort_two_three.c\
 			srcs/sort/sort_over_six_b.c\
+			srcs/sort/sort.c\
 			srcs/error/error.c\
 
 HEAD	=	push_swap.h
