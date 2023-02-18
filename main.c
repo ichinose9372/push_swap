@@ -6,7 +6,7 @@
 /*   By: ichinoseyuuki <ichinoseyuuki@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 16:30:10 by yichinos          #+#    #+#             */
-/*   Updated: 2023/02/18 14:34:30 by ichinoseyuu      ###   ########.fr       */
+/*   Updated: 2023/02/18 17:00:27 by ichinoseyuu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ int	main(int argc, char **argv)
 	list_b = NULL;
 	list_a = ft_make_list(list_a);
 	list_b = ft_make_list(list_b);
+	///////////////////////////////////
 	argc = check_arg(argc, argv, list_a);
 	ft_sort(list_a, list_b, argc);
 	return (0);
