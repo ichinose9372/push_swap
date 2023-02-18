@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_over_six.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yichinos <yichinos@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: ichinoseyuuki <ichinoseyuuki@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 10:39:26 by yichinos          #+#    #+#             */
-/*   Updated: 2023/02/16 16:19:22 by yichinos         ###   ########.fr       */
+/*   Updated: 2023/02/18 10:36:19 by ichinoseyuu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,40 +36,24 @@ int	helf_push_b(t_node **list_b, t_node **list_a, int min, int max)
 
 int	helf_push_a(t_node **list_a, t_node **list_b)
 {
-	int	max;
-	int	count;
+	int	i;
 	int	h_size;
+	int	max_index;
 
-	count = 0;
 	h_size = ft_lstsize(*list_b) / 2;
-	max = max_serch(list_b);
-	while (1)
+	i = 0;
+	while (i <= h_size)
 	{
-		if ((*list_b)->index == max)
+		max_index = max_serch(list_b);
+		if ((*list_b)->index == max_index)
 		{
 			ft_pa(list_a, list_b);
-			count++;
-			max--;
-			if (count == h_size)
-				break ;
+			i++;
 		}
 		else
 			ft_rb(list_b);
 	}
-	return (count);
-}
-
-void	push_rotate(t_node **list_a, t_node **list_b, int count)
-{
-	int	i;
-
-	i = 0;
-	while (i < count)
-	{
-		ft_pa(list_a, list_b);
-		ft_ra(list_a);
-		i++;
-	}
+	return (h_size);
 }
 
 void	sort_list_b(t_node **list_a, t_node **list_b)
@@ -89,9 +73,14 @@ void	sort_list_b(t_node **list_a, t_node **list_b)
 		}
 		sort_list_b(list_a, list_b);
 	}
-	else if (size == 3 || size == 2)
+	else if (size == 3)
 	{
-		ft_two_three_sort(list_b, size + 1);
+		ft_two_three_sort_b(list_b, size + 1);
+		push_rotate(list_a, list_b, size);
+	}
+	else if (size == 2)
+	{
+		ft_two_three_sort_b(list_b, size + 1);
 		push_rotate(list_a, list_b, size);
 	}
 }

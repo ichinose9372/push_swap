@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_four_five.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yichinos <yichinos@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: ichinoseyuuki <ichinoseyuuki@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 14:53:47 by yichinos          #+#    #+#             */
-/*   Updated: 2023/02/16 16:19:19 by yichinos         ###   ########.fr       */
+/*   Updated: 2023/02/16 23:03:11 by ichinoseyuu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,7 @@
 int	min_serch(t_node **list_a)
 {
 	int	min;
-	int	count;
 
-	count = 0;
 	min = (*list_a)->index;
 	while (*list_a)
 	{

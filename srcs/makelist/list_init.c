@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   list_init.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yichinos <yichinos@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: ichinoseyuuki <ichinoseyuuki@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 10:16:37 by ichinoseyuu       #+#    #+#             */
-/*   Updated: 2023/02/16 18:08:17 by yichinos         ###   ########.fr       */
+/*   Updated: 2023/02/17 15:30:22 by ichinoseyuu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ t_node	*ft_lstnew(int data)
 		return (NULL);
 	ndptr->prev = NULL;
 	ndptr->num = data;
+	ndptr->index = 0;
 	ndptr->next = NULL;
 	return (ndptr);
 }

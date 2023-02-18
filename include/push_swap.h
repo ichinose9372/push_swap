@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yichinos <yichinos@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: ichinoseyuuki <ichinoseyuuki@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 14:16:31 by yichinos          #+#    #+#             */
-/*   Updated: 2023/02/16 17:38:22 by yichinos         ###   ########.fr       */
+/*   Updated: 2023/02/17 22:50:46 by ichinoseyuu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,11 +66,17 @@ void	ft_four_sort(t_node **list_a, t_node **list_b);
 int		max_serch(t_node **list_a);
 int		min_serch(t_node **list_a);
 int		min_push(t_node **list_a);
-//sort argc = 7 over
+//sort argc = 6 over
 t_node	**ft_over_six_sort(t_node **list_a, t_node **list_b);
 int		helf_push_a(t_node **list_a, t_node **list_b);
 int		helf_push_b(t_node **list_b, t_node **list_a, int min, int max);
 void	sort_list_b(t_node **list_a, t_node **list_b);
+void	push_rotate(t_node **list_a, t_node **list_b, int count);
+t_node	**ft_two_sort_b(t_node **list_b);
+t_node	**ft_three_sort_next_b(t_node	**list_b, t_node *tmp);
+t_node	**ft_three_sort_b(t_node **list_b);
+t_node	**ft_two_three_sort_b(t_node **list_b, int argc);
+
 
 //error
 void	ft_error(void);
