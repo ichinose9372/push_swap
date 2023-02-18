@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   oparation_swap.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yichinos <yichinos@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: ichinoseyuuki <ichinoseyuuki@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 14:59:31 by yichinos          #+#    #+#             */
-/*   Updated: 2023/02/16 16:19:15 by yichinos         ###   ########.fr       */
+/*   Updated: 2023/02/18 11:36:34 by ichinoseyuu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,5 @@ void	ft_sa(t_node **list_a)
 void	ft_sb(t_node **list_b)
 {
 	ft_swap(list_b);
-	ft_printf("pb\n");
+	ft_printf("sb\n");
 }

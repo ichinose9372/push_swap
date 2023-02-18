@@ -6,7 +6,7 @@
 /*   By: ichinoseyuuki <ichinoseyuuki@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 10:39:26 by yichinos          #+#    #+#             */
-/*   Updated: 2023/02/18 10:36:19 by ichinoseyuu      ###   ########.fr       */
+/*   Updated: 2023/02/18 11:46:08 by ichinoseyuu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,14 +38,14 @@ int	helf_push_a(t_node **list_a, t_node **list_b)
 {
 	int	i;
 	int	h_size;
-	int	max_index;
+	int	count;
 
-	h_size = ft_lstsize(*list_b) / 2;
+	h_size = (min_serch(list_b) + max_serch(list_b)) / 2;
+	count = ft_lstsize(*list_b) / 2;
 	i = 0;
-	while (i <= h_size)
+	while (i < count)
 	{
-		max_index = max_serch(list_b);
-		if ((*list_b)->index == max_index)
+		if ((*list_b)->index > h_size)
 		{
 			ft_pa(list_a, list_b);
 			i++;
@@ -53,7 +53,7 @@ int	helf_push_a(t_node **list_a, t_node **list_b)
 		else
 			ft_rb(list_b);
 	}
-	return (h_size);
+	return (i);
 }
 
 void	sort_list_b(t_node **list_a, t_node **list_b)
@@ -73,12 +73,7 @@ void	sort_list_b(t_node **list_a, t_node **list_b)
 		}
 		sort_list_b(list_a, list_b);
 	}
-	else if (size == 3)
-	{
-		ft_two_three_sort_b(list_b, size + 1);
-		push_rotate(list_a, list_b, size);
-	}
-	else if (size == 2)
+	else if (size == 3 || size == 2)
 	{
 		ft_two_three_sort_b(list_b, size + 1);
 		push_rotate(list_a, list_b, size);
