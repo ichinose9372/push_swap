@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   list_init.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yichinos <yichinos@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: ichinoseyuuki <ichinoseyuuki@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 10:16:37 by ichinoseyuu       #+#    #+#             */
-/*   Updated: 2023/02/19 12:53:09 by yichinos         ###   ########.fr       */
+/*   Updated: 2023/02/19 22:06:29 by ichinoseyuu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,14 +35,15 @@ t_node	**ft_make_list(t_node **list_a)
 	return (list_a);
 }
 
-t_node	**push_list(t_node **list_a, t_node ** list_b, char **argv)
+t_node	**push_list(t_node **list_a, t_node **list_b, char **argv)
 {
 	t_node	*tmp;
 	long	num;
 
 	while (*argv)
 	{
-		if (!(**argv >= '0' && **argv <= '9') && !(**argv == '+') && !(**argv == '-'))
+		if (!(**argv >= '0' && **argv <= '9')
+			&&!(**argv == '+') && !(**argv == '-'))
 			ft_error(list_a, list_b);
 		num = ft_atoi(*argv);
 		if (num > LONG_MAX || num < LONG_MIN)

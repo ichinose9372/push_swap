@@ -6,7 +6,7 @@
 /*   By: ichinoseyuuki <ichinoseyuuki@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 14:30:26 by ichinoseyuu       #+#    #+#             */
-/*   Updated: 2023/02/18 17:12:35 by ichinoseyuu      ###   ########.fr       */
+/*   Updated: 2023/02/19 22:06:53 by ichinoseyuu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ t_node	**ft_four_five_sort(t_node **list_a, t_node **list_b, int argc)
 	return (list_a);
 }
 
-t_node	**ft_sort(t_node **list_a, t_node **list_b, int	num)
+t_node	**ft_sort(t_node **list_a, t_node **list_b, nint num)
 {
 	if (num <= 4)
 		ft_two_three_sort(list_a, num);
