@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yichinos <yichinos@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: ichinoseyuuki <ichinoseyuuki@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 14:16:31 by yichinos          #+#    #+#             */
-/*   Updated: 2023/02/19 15:51:11 by yichinos         ###   ########.fr       */
+/*   Updated: 2023/02/19 21:53:09 by ichinoseyuu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,8 +81,12 @@ t_node	**ft_two_three_sort_b(t_node **list_b, int argc);
 //error
 void	ft_all_free(t_node **list_a, t_node **list_b);
 void	ft_error(t_node **list_a, t_node **list_b);
-int		check_arg(int argc, char **argv, t_node **list_a, t_node **list_b);
 void	ft_sucess(t_node **list_a, t_node **list_b);
+int		check_arg(int argc, char **argv, t_node **list_a, t_node **list_b);
+void	str_free(char **str);
+int		split_push(char	*argv, t_node **list_a, t_node **list_b);
+
+
 //other
 void	print_list_a(t_node **list_a);
 void	print_list_b(t_node **list_b);

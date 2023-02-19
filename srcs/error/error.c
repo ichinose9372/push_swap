@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yichinos <yichinos@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: ichinoseyuuki <ichinoseyuuki@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 13:31:50 by ichinoseyuu       #+#    #+#             */
-/*   Updated: 2023/02/19 12:42:30 by yichinos         ###   ########.fr       */
+/*   Updated: 2023/02/19 21:55:30 by ichinoseyuu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@ void	ft_error(t_node **list_a, t_node **list_b)
 {
 	ft_all_free(list_a, list_b);
 	ft_printf("Error\n");
-	exit(1);
+	exit(EXIT_FAILURE);
 }
 
 void	ft_sucess(t_node **list_a, t_node **list_b)
 {
 	ft_all_free(list_a, list_b);
-	exit(0);
+	exit(EXIT_SUCCESS);
 }

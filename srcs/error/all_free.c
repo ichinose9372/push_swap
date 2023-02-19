@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   all_free.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yichinos <yichinos@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: ichinoseyuuki <ichinoseyuuki@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 16:53:48 by ichinoseyuu       #+#    #+#             */
-/*   Updated: 2023/02/19 13:19:08 by yichinos         ###   ########.fr       */
+/*   Updated: 2023/02/19 21:53:36 by ichinoseyuu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,7 @@
 void	ft_all_free(t_node **list_a, t_node **list_b)
 {
 	t_node	*tmp;
-	int		i;
 
-	i = 0;
 	while (*list_a)
 	{
 		tmp = (*list_a)->next;
@@ -26,4 +24,17 @@ void	ft_all_free(t_node **list_a, t_node **list_b)
 	}
 	free(list_a);
 	free(list_b);
+}
+
+void	str_free(char **str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i] != NULL)
+	{
+		free(str[i]);
+		i++;
+	}
+	free(str);
 }

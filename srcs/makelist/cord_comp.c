@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cord_comp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yichinos <yichinos@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: ichinoseyuuki <ichinoseyuuki@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 12:12:06 by ichinoseyuu       #+#    #+#             */
-/*   Updated: 2023/02/19 15:55:11 by yichinos         ###   ########.fr       */
+/*   Updated: 2023/02/19 20:28:40 by ichinoseyuu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,7 @@ t_node	**ft_compression(int *arry, int size, t_node **list_a)
 t_node	**ft_cord_comp(t_node **list_a, t_node **list_b)
 {
 	int	*arry;
+
 	arry = ft_make_arry(list_a);
 	if (!arry)
 	{
@@ -87,6 +88,5 @@ t_node	**ft_cord_comp(t_node **list_a, t_node **list_b)
 	ft_sort_int_tab(arry, ft_lstsize(*list_a));
 	ft_compression(arry, ft_lstsize(*list_a), list_a);
 	free(arry);
-	print_list_a(list_a);
 	return (list_a);
 }
