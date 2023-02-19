@@ -6,7 +6,7 @@
 /*   By: yichinos <yichinos@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 12:12:06 by ichinoseyuu       #+#    #+#             */
-/*   Updated: 2023/02/19 12:00:09 by yichinos         ###   ########.fr       */
+/*   Updated: 2023/02/19 15:55:11 by yichinos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,22 +36,22 @@ void	ft_sort_int_tab(int *tab, int size)
 	}
 }
 
-int	*ft_make_arry(int argc, char **argv)
+int	*ft_make_arry(t_node **list_a)
 {
 	int	*arry;
 	int	*top;
 	int	i;
 
-	arry = malloc(sizeof(int) * (argc - 1));
+	arry = malloc(sizeof(int) * ft_lstsize(*list_a));
 	if (!arry)
 		return (NULL);
 	top = arry;
 	i = 0;
-	while (*argv)
+	while (*list_a)
 	{
-		arry[i] = ft_atoi(*argv);
+		arry[i] = (*list_a)->num;
 		i++;
-		argv++;
+		list_a = &(*list_a)->next;
 	}
 	return (top);
 }
@@ -75,18 +75,18 @@ t_node	**ft_compression(int *arry, int size, t_node **list_a)
 	return (list_a);
 }
 
-t_node	**ft_cord_comp(int argc, char **argv, t_node **list_a, t_node **list_b)
+t_node	**ft_cord_comp(t_node **list_a, t_node **list_b)
 {
 	int	*arry;
-
-	arry = ft_make_arry(argc, argv);
+	arry = ft_make_arry(list_a);
 	if (!arry)
 	{
 		ft_all_free(list_a, list_b);
 		exit(1);
 	}
-	ft_sort_int_tab(arry, argc - 1);
-	ft_compression(arry, argc - 1, list_a);
+	ft_sort_int_tab(arry, ft_lstsize(*list_a));
+	ft_compression(arry, ft_lstsize(*list_a), list_a);
 	free(arry);
+	print_list_a(list_a);
 	return (list_a);
 }

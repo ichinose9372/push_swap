@@ -6,7 +6,7 @@
 /*   By: yichinos <yichinos@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 16:30:10 by yichinos          #+#    #+#             */
-/*   Updated: 2023/02/19 13:19:54 by yichinos         ###   ########.fr       */
+/*   Updated: 2023/02/19 15:33:54 by yichinos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int	main(int argc, char **argv)
 		ft_sucess(list_a, list_b);
 		return (0);
 	}
-	ft_sort(list_a, list_b, argc);
+	// ft_sort(list_a, list_b, argc);
 	ft_sucess(list_a, list_b);
 	return (0);
 }

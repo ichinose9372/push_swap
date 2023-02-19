@@ -6,7 +6,7 @@
 /*   By: yichinos <yichinos@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 14:16:31 by yichinos          #+#    #+#             */
-/*   Updated: 2023/02/19 12:14:29 by yichinos         ###   ########.fr       */
+/*   Updated: 2023/02/19 15:51:11 by yichinos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ typedef struct s_node {
 
 // cordinate compression
 void	ft_sort_int_tab(int *tab, int size);
-int		*ft_make_arry(int argc, char **argv);
+int		*ft_make_arry(t_node **list_a);
 t_node	**ft_compression(int *arry, int size, t_node **list_a);
-t_node	**ft_cord_comp(int argc, char **argv, t_node **list_a, t_node **list_b);
+t_node	**ft_cord_comp(t_node **list_a, t_node **list_b);
 // operate list
 t_node	*ft_lstlast(t_node *head);
 void	ft_lstadd_back(t_node **head, t_node	*new);
