@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_two_three.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yichinos <yichinos@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: ichinoseyuuki <ichinoseyuuki@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 13:17:20 by yichinos          #+#    #+#             */
-/*   Updated: 2023/02/16 16:19:25 by yichinos         ###   ########.fr       */
+/*   Updated: 2023/02/18 17:12:26 by ichinoseyuu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,14 +55,5 @@ t_node	**ft_three_sort(t_node **list_a)
 	}
 	else
 		ft_three_sort_next(list_a, tmp);
-	return (list_a);
-}
-
-t_node	**ft_two_three_sort(t_node **list_a, int argc)
-{
-	if (argc == 3)
-		ft_two_sort(list_a);
-	if (argc == 4)
-		ft_three_sort(list_a);
 	return (list_a);
 }

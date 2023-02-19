@@ -6,22 +6,22 @@
 /*   By: ichinoseyuuki <ichinoseyuuki@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 10:39:26 by yichinos          #+#    #+#             */
-/*   Updated: 2023/02/18 11:46:08 by ichinoseyuu      ###   ########.fr       */
+/*   Updated: 2023/02/18 23:39:55 by ichinoseyuu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
 
-int	helf_push_b(t_node **list_b, t_node **list_a, int min, int max)
+int	helf_push_b(t_node **list_b, t_node **list_a, int min_index, int max_index)
 {
 	int	count;
 	int	h_size;
 
-	h_size = max - min;
+	h_size = max_index - min_index;
 	count = 0;
 	while (1)
 	{
-		if ((*list_a)->index >= min && (*list_a)->index < max)
+		if ((*list_a)->index >= min_index && (*list_a)->index < max_index)
 		{
 			ft_pb(list_b, list_a);
 			h_size--;

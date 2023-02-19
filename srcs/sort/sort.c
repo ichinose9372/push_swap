@@ -6,11 +6,29 @@
 /*   By: ichinoseyuuki <ichinoseyuuki@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 14:30:26 by ichinoseyuu       #+#    #+#             */
-/*   Updated: 2023/02/18 14:33:48 by ichinoseyuu      ###   ########.fr       */
+/*   Updated: 2023/02/18 17:12:35 by ichinoseyuu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
+
+t_node	**ft_two_three_sort(t_node **list_a, int argc)
+{
+	if (argc == 3)
+		ft_two_sort(list_a);
+	if (argc == 4)
+		ft_three_sort(list_a);
+	return (list_a);
+}
+
+t_node	**ft_four_five_sort(t_node **list_a, t_node **list_b, int argc)
+{
+	if (argc == 5)
+		ft_four_sort(list_a, list_b);
+	if (argc == 6)
+		ft_five_sort(list_a, list_b);
+	return (list_a);
+}
 
 t_node	**ft_sort(t_node **list_a, t_node **list_b, int	num)
 {
