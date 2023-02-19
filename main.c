@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ichinoseyuuki <ichinoseyuuki@student.42    +#+  +:+       +#+        */
+/*   By: yichinos <yichinos@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 16:30:10 by yichinos          #+#    #+#             */
-/*   Updated: 2023/02/19 11:21:11 by ichinoseyuu      ###   ########.fr       */
+/*   Updated: 2023/02/19 13:19:54 by yichinos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,10 +47,14 @@ int	main(int argc, char **argv)
 	list_b = NULL;
 	list_a = ft_make_list(list_a);
 	list_b = ft_make_list(list_b);
-	argc = check_arg(argc, argv, list_a);
+	argc = check_arg(argc, argv, list_a, list_b);
+	if (argc == 0)
+	{
+		ft_sucess(list_a, list_b);
+		return (0);
+	}
 	ft_sort(list_a, list_b, argc);
-	// ft_all_free(list_a);
-	// ft_all_free(list_b);
+	ft_sucess(list_a, list_b);
 	return (0);
 }
 

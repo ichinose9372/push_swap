@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ichinoseyuuki <ichinoseyuuki@student.42    +#+  +:+       +#+        */
+/*   By: yichinos <yichinos@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 14:16:31 by yichinos          #+#    #+#             */
-/*   Updated: 2023/02/18 16:59:25 by ichinoseyuu      ###   ########.fr       */
+/*   Updated: 2023/02/19 12:14:29 by yichinos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ typedef struct s_node {
 void	ft_sort_int_tab(int *tab, int size);
 int		*ft_make_arry(int argc, char **argv);
 t_node	**ft_compression(int *arry, int size, t_node **list_a);
-t_node	**ft_cord_comp(int argc, char **argv, t_node **list_a);
+t_node	**ft_cord_comp(int argc, char **argv, t_node **list_a, t_node **list_b);
 // operate list
 t_node	*ft_lstlast(t_node *head);
 void	ft_lstadd_back(t_node **head, t_node	*new);
@@ -53,7 +53,7 @@ void	ft_sb(t_node **list_b);
 // main and init list
 t_node	*ft_lstnew(int data);
 t_node	**ft_make_list(t_node **list_a);
-t_node	**push_list(t_node **list_a, char **argv);
+t_node	**push_list(t_node **list_a, t_node **list_b, char **argv);
 // sort list
 t_node	**ft_sort(t_node **list_a, t_node **list_b, int num);
 t_node	**ft_two_sort(t_node **list_a);
@@ -79,9 +79,10 @@ t_node	**ft_three_sort_b(t_node **list_b);
 t_node	**ft_two_three_sort_b(t_node **list_b, int argc);
 
 //error
-void	ft_all_free(t_node **list_a);
-void	ft_error(void);
-int		check_arg(int argc, char **argv, t_node **list_a);
+void	ft_all_free(t_node **list_a, t_node **list_b);
+void	ft_error(t_node **list_a, t_node **list_b);
+int		check_arg(int argc, char **argv, t_node **list_a, t_node **list_b);
+void	ft_sucess(t_node **list_a, t_node **list_b);
 //other
 void	print_list_a(t_node **list_a);
 void	print_list_b(t_node **list_b);
