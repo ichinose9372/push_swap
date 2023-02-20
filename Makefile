@@ -21,35 +21,42 @@ SRCS	=	main.c\
 			srcs/error/error.c\
 			srcs/error/all_free.c\
 
-HEAD	=	push_swap.h
+HEAD_FILE = include/push_swap.h
 
-LIBFT = libft/libft.a
+LIBFT_DIR = libft
+LIBFT = $(LIBFT_DIR)/libft.a
 
-PRINTF = ft_printf_42tokyo/libftprintf.a
+PRINTF_DIR = ft_printf_42tokyo
+PRINTF =$(PRINTF_DIR)/libftprintf.a
 
 RM		=	rm -f
 
 OBJS = $(SRCS:.c=.o)
 
-%.o : %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+.PHONY:	all clean fclean re
 
 all : $(NAME)
 
-$(NAME) : $(OBJS)
-	make -C libft
-	make -C ft_printf_42tokyo
+$(NAME) : $(OBJS) $(LIBFT) $(PRINTF)
 	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) $(PRINTF) -o $@
+
+$(OBJS) : %.o: %.c $(HEAD_FILE)
+	$(CC) $(CFLAGS) -c $< -o $@
+
+$(LIBFT) :
+	$(MAKE) -C $(LIBFT_DIR)
+
+$(PRINTF):
+	$(MAKE) -C $(PRINTF_DIR)
 
 clean:
 	$(RM) $(OBJS)
-	make clean -C libft
-	make clean -C ft_printf_42tokyo
+	$(MAKE) clean -C $(LIBFT_DIR)
+	$(MAKE) clean -C $(PRINTF_DIR)
 fclean:	clean
 	$(RM) $(NAME)
-	make fclean -C libft
-	make fclean -C ft_printf_42tokyo
-
+	$(MAKE) fclean -C $(LIBFT_DIR)
+	$(MAKE) fclean -C $(PRINTF_DIR)
+	$(RM) $(OBJS)
 re:		fclean all
 
-.PHONY:	all clean fclean re

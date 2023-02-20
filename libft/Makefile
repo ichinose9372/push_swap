@@ -3,16 +3,15 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: yichinos <yichinos@student.42tokyo.jp>     +#+  +:+       +#+         #
+#    By: ichinoseyuuki <ichinoseyuuki@student.42    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/06 13:35:07 by ichinoseyuu       #+#    #+#              #
-#    Updated: 2023/02/07 16:09:07 by yichinos         ###   ########.fr        #
+#    Updated: 2023/02/20 11:10:05 by ichinoseyuu      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	libft.a
 SRCS	=	ft_isalpha.c	\
-			ft_isascii.c	\
 			ft_isalnum.c	\
 			ft_isascii.c	\
 			ft_isdigit.c	\
@@ -47,20 +46,9 @@ SRCS	=	ft_isalpha.c	\
 			ft_striteri.c	\
 			ft_split.c		\
 
-BONUS = ft_lstadd_back.c	\
-		ft_lstadd_front.c	\
-		ft_lstclear.c		\
-		ft_lstdelone.c 		\
-		ft_lstiter.c 		\
-		ft_lstlast.c 		\
-		ft_lstnew.c 		\
-		ft_lstsize.c		\
-		ft_lstmap.c
+HEAD_FILE = libft.h
 
 OBJS	=	$(SRCS:.c=.o)
-
-BONUS_OBJS = $(BONUS:.c=.o)
-
 CC		=	cc
 CFLAGS	=	-Wall -Wextra -Werror
 RM		=	rm -f
@@ -70,6 +58,9 @@ all : $(NAME)
 $(NAME)	: $(OBJS)
 		ar rcs $(NAME) $(OBJS)
 
+%.o: %.c $(HEAD_FILE)
+	$(CC) $(CFLAGS) -c $< -o $@
+
 clean:
 	$(RM) $(OBJS) $(BONUS_OBJS)
 
@@ -77,9 +68,5 @@ fclean: clean
 	$(RM) $(NAME)
 
 re:		fclean all
-
-bonus:	$(OBJS) $(BONUS_OBJS)
-	ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
-
 
 .PHONY: all clean fclean re bonus

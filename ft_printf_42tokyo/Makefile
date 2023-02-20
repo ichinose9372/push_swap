@@ -7,7 +7,9 @@ SRCS =	ft_putchar.c	\
 		ft_putadrs.c	\
 		ft_printf.c		\
 
-OBJS = ${SRCS:.c=.o}
+HEAD_FILE = ft_printf.h
+
+OBJS = $(SRCS:.c=.o)
 
 CC = cc
 
@@ -15,16 +17,19 @@ CFLAGS = -Wall -Wextra -Werror
 
 RM = rm -rf
 
-all : ${NAME}
+all : $(NAME)
 
 $(NAME): $(OBJS)
 	ar rcs $(NAME) $(OBJS)
 
+%.o: %.c $(HEAD_FILE)
+	$(CC) $(CFLAGS) -c $< -o $@
+
 clean :
-	${RM} ${OBJS}
+	$(RM) $(OBJS)
 
 fclean :
-	${RM} ${NAME} ${OBJS}
+	$(RM) $(NAME) $(OBJS)
 
 re : fclean all
 
