@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   push_swap_atoi.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yichinos <yichinos@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 11:52:04 by ichinoseyuu       #+#    #+#             */
-/*   Updated: 2023/02/21 15:47:12 by yichinos         ###   ########.fr       */
+/*   Updated: 2023/02/21 17:03:10 by yichinos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
+#include "../../include/push_swap.h"
 
-int	ft_isspace(char c)
+static int	ft_isspace(char c)
 {
 	c = (unsigned char)c;
 	if (c == '\t' || c == '\n' || c == '\v' || c == '\f' || c == '\r'
@@ -21,19 +21,7 @@ int	ft_isspace(char c)
 	return (0);
 }
 
-static int	check_nb(long number, int type, char c)
-{
-	if ((number * 10 + (c - '0')) / 10 != number)
-	{
-		if (type == -1)
-			return ((int)LONG_MIN);
-		else
-			return ((int)LONG_MAX);
-	}
-	return (0);
-}
-
-int	ft_atoi(const char *nptr)
+int	push_swap_atoi(const char *nptr, t_node **list_a, t_node **list_b)
 {
 	int		type;
 	long	number;
@@ -52,11 +40,11 @@ int	ft_atoi(const char *nptr)
 	}
 	while (ft_isdigit(*nptr))
 	{
-		if ((number * 10 + (*nptr - '0')) / 10 != number)
-			return (check_nb(number, type, *nptr));
 		number *= 10;
 		number += *nptr - '0';
 		nptr++;
 	}
+	if (number * type > INT_MAX || number * type < INT_MIN)
+		ft_error(list_a, list_b);
 	return (number * type);
 }

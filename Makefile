@@ -9,6 +9,8 @@ SRCS	=	main.c\
 			srcs/makelist/lst_utils.c\
 			srcs/makelist/cord_comp.c\
 			srcs/check/check_arg.c\
+			srcs/check/sorted.c\
+			srcs/check/push_swap_atoi.c\
 			srcs/oparations/oparation_push.c\
 			srcs/oparations/oparation_rotate.c\
 			srcs/oparations/oparation_revers_rotate.c\

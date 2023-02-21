@@ -1,40 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   all_free.c                                         :+:      :+:    :+:   */
+/*   sorted.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yichinos <yichinos@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/18 16:53:48 by ichinoseyuu       #+#    #+#             */
-/*   Updated: 2023/02/21 15:34:13 by yichinos         ###   ########.fr       */
+/*   Created: 2023/02/21 14:37:26 by yichinos          #+#    #+#             */
+/*   Updated: 2023/02/21 15:37:14 by yichinos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
 
-void	ft_all_free(t_node **list_a, t_node **list_b)
+int	ft_sorted(t_node **list_a)
 {
-	t_node	*tmp;
+	int	index;
 
-	while (*list_a)
+	index = 0;
+	while ((*list_a))
 	{
-		tmp = (*list_a)->next;
-		free(*list_a);
-		*list_a = tmp;
+		if ((*list_a)->index == index)
+		{
+			index++;
+			list_a = &(*list_a)->next;
+		}
+		else
+			return (0);
 	}
-	free(list_a);
-	free(list_b);
-}
-
-void	str_free(char **str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i] != NULL)
-	{
-		free(str[i]);
-		i++;
-	}
-	free(str);
+	return (1);
 }

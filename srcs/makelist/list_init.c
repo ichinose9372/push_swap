@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   list_init.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ichinoseyuuki <ichinoseyuuki@student.42    +#+  +:+       +#+        */
+/*   By: yichinos <yichinos@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 10:16:37 by ichinoseyuu       #+#    #+#             */
-/*   Updated: 2023/02/19 22:06:29 by ichinoseyuu      ###   ########.fr       */
+/*   Updated: 2023/02/21 17:02:49 by yichinos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ t_node	**ft_make_list(t_node **list_a)
 {
 	list_a = malloc(sizeof(t_node *));
 	if (list_a == NULL)
-		exit(1);
+		exit(EXIT_FAILURE);
 	*list_a = NULL;
 	return (list_a);
 }
@@ -45,18 +45,10 @@ t_node	**push_list(t_node **list_a, t_node **list_b, char **argv)
 		if (!(**argv >= '0' && **argv <= '9')
 			&&!(**argv == '+') && !(**argv == '-'))
 			ft_error(list_a, list_b);
-		num = ft_atoi(*argv);
-		if (num > LONG_MAX || num < LONG_MIN)
-		{
-			ft_all_free(list_a, list_b);
-			exit(1);
-		}
+		num = push_swap_atoi(*argv, list_a, list_b);
 		tmp = ft_lstnew((int)num);
 		if (tmp == NULL)
-		{
-			ft_all_free(list_a, list_b);
-			exit(1);
-		}
+			ft_error(list_a, list_b);
 		ft_lstadd_back(list_a, tmp);
 		argv++;
 	}
