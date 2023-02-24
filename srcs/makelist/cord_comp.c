@@ -6,13 +6,13 @@
 /*   By: yichinos <yichinos@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 12:12:06 by ichinoseyuu       #+#    #+#             */
-/*   Updated: 2023/02/21 17:02:40 by yichinos         ###   ########.fr       */
+/*   Updated: 2023/02/24 11:47:21 by yichinos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
 
-void	ft_sort_int_tab(int *tab, int size)
+void	ft_sort_int_tab(int *tab, int size, t_node **list_a, t_node **list_b)
 {
 	int	i;
 	int	j;
@@ -29,6 +29,11 @@ void	ft_sort_int_tab(int *tab, int size)
 				tmp = tab[j];
 				tab[j] = tab[j + 1];
 				tab[j + 1] = tmp;
+			}
+			else if (tab[j] == tab[j + 1])
+			{
+				free(tab);
+				ft_error(list_a, list_b);
 			}
 			j++;
 		}
@@ -75,28 +80,29 @@ t_node	**ft_compression(int *arry, int size, t_node **list_a)
 	return (list_a);
 }
 
-int	check_arry(int	*arry, int size, t_node **list_a, t_node **list_b)
-{
-	int	i;
-	int	j;
+// int	check_arry(int	*arry, int size, t_node **list_a, t_node **list_b)
+// {
+// 	int	i;
+// 	int	j;
 
-	i = 0;
-	while (i < size)
-	{
-		j = 1;
-		while (j < size)
-		{
-			if (arry[i] == arry[j])
-			{
-				ft_error(list_a, list_b);
-				return (1);
-			}
-			j++;
-		}
-		i++;
-	}
-	return (0);
-}
+// 	i = 0;
+// 	while (i < size)
+// 	{
+// 		j = j - 1;
+// 		while (j < size)
+// 		{
+// 			if (arry[i] == arry[j])
+// 			{
+// 				printf("arryi = %d, arryj = %d\n", arry[i], arry[j]);
+// 				ft_error(list_a, list_b);
+// 				return (1);
+// 			}
+// 			j++;
+// 		}
+// 		i++;
+// 	}
+// 	return (0);
+// }
 
 t_node	**ft_cord_comp(t_node **list_a, t_node **list_b)
 {
@@ -108,13 +114,13 @@ t_node	**ft_cord_comp(t_node **list_a, t_node **list_b)
 		ft_all_free(list_a, list_b);
 		exit(1);
 	}
-	ft_sort_int_tab(arry, ft_lstsize(*list_a));
+	ft_sort_int_tab(arry, ft_lstsize(*list_a), list_a, list_b);
 	ft_compression(arry, ft_lstsize(*list_a), list_a);
-	if (check_arry(arry, ft_lstsize(*list_a), list_a, list_b))
-	{
-		free(arry);
-		ft_error(list_a, list_b);
-	}
+	// if (check_arry(arry, ft_lstsize(*list_a), list_a, list_b))
+	// {
+	// 	free(arry);
+	// 	ft_error(list_a, list_b);
+	// }
 	free(arry);
 	return (list_a);
 }
