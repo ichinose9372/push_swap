@@ -3,17 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yichinos <yichinos@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: ichinoseyuuki <ichinoseyuuki@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 14:16:31 by yichinos          #+#    #+#             */
-/*   Updated: 2023/02/24 11:46:06 by yichinos         ###   ########.fr       */
+/*   Updated: 2023/02/24 13:38:47 by ichinoseyuu      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include <stdio.h>
 # include <stdlib.h>
 # include <limits.h>
 # include "../ft_printf_42tokyo/ft_printf.h"
@@ -89,5 +88,4 @@ void	str_free(char **str);
 int		split_push(char	*argv, t_node **list_a, t_node **list_b);
 //sorted
 int		ft_sorted(t_node **list_a);
-void	print_list_a(t_node **list_a);
 #endif
