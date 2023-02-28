@@ -6,7 +6,7 @@
 /*   By: yichinos <yichinos@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 11:52:04 by ichinoseyuu       #+#    #+#             */
-/*   Updated: 2023/02/24 11:31:56 by yichinos         ###   ########.fr       */
+/*   Updated: 2023/02/26 18:25:49 by yichinos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,8 @@ int	push_swap_atoi(const char *nptr, t_node **list_a, t_node **list_b)
 		if (*nptr == '-')
 			type *= -1;
 		nptr++;
-		if (*nptr == '+' || *nptr == '-')
-			return (0);
+		if (!(*nptr >= '0' && *nptr <= '9'))
+			ft_error(list_a, list_b);
 	}
 	while (ft_isdigit(*nptr))
 	{

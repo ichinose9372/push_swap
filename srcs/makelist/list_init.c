@@ -6,7 +6,7 @@
 /*   By: yichinos <yichinos@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 10:16:37 by ichinoseyuu       #+#    #+#             */
-/*   Updated: 2023/02/24 11:34:53 by yichinos         ###   ########.fr       */
+/*   Updated: 2023/02/28 12:49:27 by yichinos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ t_node	**push_list(t_node **list_a, t_node **list_b, char **argv)
 	while (*argv)
 	{
 		if (!(**argv >= '0' && **argv <= '9')
-			&&!(**argv == '+') && !(**argv == '-'))
+			&& !(**argv == '+') && !(**argv == '-'))
 			ft_error(list_a, list_b);
 		num = push_swap_atoi(*argv, list_a, list_b);
 		tmp = ft_lstnew((int)num);
